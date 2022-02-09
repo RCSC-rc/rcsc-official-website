@@ -1,0 +1,20 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background-image: url(../images/bg2.png);
+    height: 500vh;
+}
+.member h3{
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    font-size: x-large;
+}
+@media only screen and (max-width:412px) {
+    body{
+        height:280vh;
+    }
+}
+

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Bubblegum+Sans&display=swap');
+
+h2{
+    color:steelblue;
+    text-align: center;
+    margin: auto;
+    padding:30px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+p{
+    margin-left: 10%;
+    margin-right: 10%;
+    color:blanchedalmond;
+    margin: auto;
+    padding: 30px 15px 20px;
+    text-align: center;
+    border: 2px solid blanchedalmond;
+    font-family: 'Bubblegum Sans', cursive;
+}

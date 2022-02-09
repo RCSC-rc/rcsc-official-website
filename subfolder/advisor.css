@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@900&family=Source+Sans+Pro:wght@300&display=swap');
+*{margin:0;
+padding:0;
+}
+.container img{
+    margin-left: 5%;
+    height: 120px;
+    width:120px;
+    border-radius: 10px;
+    padding-right: 27px;
+}
+.intro{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.intro h2{
+    color:white;
+    margin-right:20%;
+    padding-top: 20px;
+}
+.name{
+    font-size: x-large;
+    padding-bottom: 10px;
+    color:aqua;
+    font-family: 'Lato',sans-serif, Arial, Helvetica;
+}
+.lilintro{
+    font-size: 15px;
+}
+.speech{
+    color:white;
+    padding: 15px 25px 55px; 
+}
+hr{
+    margin:8px 20px;
+}
+@media only screen and (min-width: 768px){
+    .intro h2{
+        margin-right: 65%;
+    }
+    .container{
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+}
+@media only screen and (max-width: 412px){
+    .container{
+        padding-top: 20px;
+    }
+    .container img{
+        margin-left: 3%;
+        height: 100px;
+        width:100px;
+        border-radius: 20px;
+        padding-right: 25px;
+    }
+}
