@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@900&family=Source+Sans+Pro:wght@300&display=swap');
 *{
     margin:0;
     padding:0;
@@ -88,33 +88,27 @@
   background-image: url(images/bg2.png);
   background-attachment: fixed;
 }
-.member{
-  background-attachment: fixed;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  padding-bottom: 10%;
-}
+
 .corepic{
   display: flex;
   flex-wrap: wrap;
   justify-content:space-around;
 }
 .member h3{
-  color:lightskyblue;
-  font-family: Arial, Helvetica, sans-serif;
+  color:#027794;
+  font-family:'Source Sans Pro', sans-serif;
   font-size: 20px;
   text-shadow: darksalmon;
-  opacity: 20%;
+  padding-top: 8%;
 }
 .member h4{
   color:lightskyblue;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-family:'Source Sans Pro', sans-serif;
+  font-size: 25px;
   text-shadow: darksalmon;
   text-align: center;
   opacity: 100%;
-  padding-top: 10%;
+  padding-top: 30%;
   text-decoration-line: underline;
 }
 #right{
@@ -147,6 +141,7 @@
 #sc{
   text-decoration-line: underline;
   text-decoration-style: double;
+  font-size: 30px;
 }
 #rc{
   font-size: 18px;
@@ -159,6 +154,7 @@
   margin: auto;
   overflow: auto;
   padding: 0 2rem;
+  padding-top: 160px;;
 }
 .card {
   display: grid;
@@ -191,7 +187,7 @@
   background: rgb(2, 113, 165);
   color: #fff;
   padding: 0.8rem 1.8rem;
-  margin-top: 2rem;
+  margin-top:1rem;
   cursor: pointer;
 }
 
@@ -208,6 +204,20 @@ footer img{
   height: 45px;
   width:45px;
   padding:5px;
+}
+.glow {
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(136, 210, 245), 0 0 20px rgb(15, 175, 250),0 0 30px #6d9efa, 0 0 40px #0004e636, 0 0 50px #3f71fc, 0 0 60px #3f42fa, 0 0 70px #1700e6;
+  }
+  to {
+    text-shadow: 0 0 20px rgb(160, 176, 247), 0 0 30px #3ac5fc, 0 0 40px #4dbeff, 0 0 50px #2311c7, 0 0 60px #ff4da6, 0 0 70px #4d9aff, 0 0 80px #4dc7ff;
+  }
 }
 
 @media(max-width:600px) {
@@ -278,8 +288,7 @@ footer img{
     opacity: 0.8;
   }
   .member h3{
-    color:lightskyblue;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 30px;
     text-shadow: darksalmon;
     opacity: 80%;
@@ -360,4 +369,68 @@ footer img{
   to {
       opacity: 1;
   }
+}
+
+/**************************************************************************/
+
+.num_of_mem {
+  color: var(--color);
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-left:20%;
+  padding-top: 10%;
+}
+
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.stack span {
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size:30px;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
 }
